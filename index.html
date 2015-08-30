@@ -1,0 +1,141 @@
+<html>
+<head>
+	<title>Timetable</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="style.css"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="libraries/jquery.cookie.js"></script>
+	<script src="libraries/jscolor/jscolor.js"></script>
+	<!-- Demo Data -->
+	<script src="subjects.js"></script>
+	<script src="code.js"></script>
+</head>
+
+<body>
+	<button onclick="Save()">Save</button>
+	<div class = "WeekView" id = "Week1">
+		<div class = "D1">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D2">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D3">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D4">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D5">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+	</div>
+	<div class = "WeekView" id = "Week2">
+		<div class = "D1">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D2">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D3">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D4">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+		<div class = "D5">
+			<div id = "P1"></div>
+			<div id = "P2"></div>
+			<div id = "P3"></div>
+			<div id = "P4"></div>
+			<div id = "P5"></div>
+			<div id = "P6"></div>
+			<div id = "P7"></div>
+		</div>
+	</div>
+	<!-- <div id="Time"></div> -->
+	<button id= "NextWeek" onclick="Slide()">Next Week</button>
+	<button id="AddSubject" onclick = "$('#SubjectCreator').show( 'blind', 500 ); $('#Create').show(); $('#Edit').hide(); $('#Delete').hide(); $('#ClassSelect').val(''); $('#Grade').val(''); $('#ClassNum').val(''); $('#Room').val(''); $('.color').val(''); $('.color').css('background-color', 'white');">Add Subject</button>
+	<div id = "SubjectCreator">
+		<div style="font-size: 20px; text-align:center;">Create Subject</div>
+		<i id="CloseCreator" onclick="$('#SubjectCreator').hide('blind', 500);">Close</i>
+		<div><label for="ClassSelect" >Subject: </label>
+		<input id="ClassSelect" style="width: 132px;">
+		</div>
+
+		<div><label for="Grade">Year: </label>
+		<input id = "Grade" type="number" value="10" min="1" max="12" step="1" /></div>
+
+		<div><label for="ClassNum">Class Number: </label>
+		<input id = "ClassNum" style="width: 67px;" /></div>
+
+		<div><label for="Room">Room: </label>
+		<input id = "Room" style="width: 139px;" /></div>
+
+		<div><label for="Color">Color: </label>
+		<input class = "color"/></div>
+
+		<button id="Create" onclick = "CreateSubject()">Create New Subject</button>
+		<button id="Edit">Save Changes</button>
+		<button id="Delete">Delete Subject</button>
+		<p id="Message"></p>
+	</div>
+	<div id = "SubjectBox"></div>
+</body>
+</html>
